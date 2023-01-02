@@ -26,7 +26,7 @@ export default function Register() {
             <input
               placeholder="Password"
               aria-label="Password"
-              type="text"
+              type="password"
               name="password"
             />
             <button type="submit">Register</button>

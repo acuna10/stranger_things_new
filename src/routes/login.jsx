@@ -1,5 +1,6 @@
 import { Form, Navigate, redirect } from "react-router-dom";
 import { login } from "../things";
+import { register } from "../things";
 
 export async function action({ request, params }) {
   const formData = await request.formData();
@@ -15,7 +16,7 @@ export default function Login() {
   return (
     <>
       <div id="sidebar">
-        <div>Register</div>
+        <div>Login</div>
       </div>
       <div id="detail">
         <Form method="post" id="thing-form">
@@ -29,10 +30,12 @@ export default function Login() {
             <input
               placeholder="Password"
               aria-label="Password"
-              type="text"
+              type="password"
               name="password"
             />
             <button type="submit">Login</button>
+            <h4>Or</h4>
+            <button type="submit">Register</button>
           </p>
         </Form>
       </div>

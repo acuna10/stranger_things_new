@@ -14,44 +14,27 @@ export default function EditThing() {
   return (
     <Form method="post" id="thing-form">
       <p>
-        <span>Name</span>
+        <span>Name Of Item</span>
         <input
-          placeholder="First"
-          aria-label="First name"
+          placeholder="Enter Here"
+          aria-label=""
           type="text"
-          name="first"
+          name="name"
           defaultValue={thing.first}
-        />
-        <input
-          placeholder="Last"
-          aria-label="Last name"
-          type="text"
-          name="last"
-          defaultValue={thing.last}
         />
       </p>
       <label>
-        <span>Twitter</span>
+        <span>Price</span>
         <input
-          type="text"
-          name="twitter"
-          placeholder="@jack"
-          defaultValue={thing.twitter}
+          type="text "
+          name="price"
+          placeholder="How Much $$"
+          defaultValue={thing.price}
         />
       </label>
       <label>
-        <span>Avatar URL</span>
-        <input
-          placeholder="https://example.com/avatar.jpg"
-          aria-label="Avatar URL"
-          type="text"
-          name="avatar"
-          defaultValue={thing.avatar}
-        />
-      </label>
-      <label>
-        <span>Notes</span>
-        <textarea name="notes" defaultValue={thing.notes} rows={6} />
+        <span>Description</span>
+        <textarea name="Describe Your Item As Best As You Can" defaultValue={thing.notes} rows={6} />
       </label>
       <p>
         <button type="submit">Save</button>

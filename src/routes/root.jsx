@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Form, Link, Outlet, useLoaderData } from "react-router-dom";
-import { createThing, getThings, getMe } from "../things";
+import { createThing, getThings, getMe, register } from "../things";
+import EditThing from "./edit";
+import Register from "./register";
 
 export async function loader() {
   const things = await getThings();
@@ -30,13 +32,22 @@ export default function Root() {
       <div id="sidebar">
         <div>
           {" "}
-          <Form method="post">
-            <button type="submit">New Thing</button>
-          </Form>
+            {isLoggedIn ? (
+              <button onClick={EditThing}>New Post</button>
+            ) : (
+              <Link to="things/:thingId/edit">Edit</Link>
+            )}
+        
           {isLoggedIn ? (
             <button onClick={logOut}>Logout</button>
           ) : (
             <Link to="/login">Login</Link>
+          )}
+
+          {isLoggedIn ? (
+            <button onClick={Register}>Register</button>
+          ) : (
+            <Link to="/register">Register</Link>
           )}
         </div>
         <div>

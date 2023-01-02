@@ -98,13 +98,15 @@ form[action$="destroy"] button {
 
 #root {
   display: flex;
-  height: 100%;
+  max-height: max-content;
   width: 100%;
+  background-color: lightgreen;
+  align-items: center;
 }
 
 #sidebar {
   width: 22rem;
-  background-color: #f7f7f7;
+  background-color: lightgoldenrodyellow;
   border-right: solid 1px #e3e3e3;
   display: flex;
   flex-direction: column;
@@ -137,10 +139,13 @@ form[action$="destroy"] button {
 #sidebar > div {
   display: flex;
   align-items: center;
+  text-align: center;
   gap: 0.5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #e3e3e3;
+  font-size: 30px;
+  
 }
 
 #sidebar > div form {
@@ -202,9 +207,9 @@ i {
 }
 
 #sidebar ul {
+  background-color: lightcoral;
   padding: 0;
   margin: 0;
-  list-style: none;
 }
 
 #sidebar li {
@@ -237,9 +242,9 @@ i {
 #sidebar nav a.pending {
   color: hsl(224, 98%, 58%);
 }
-
 #detail {
-  flex: 1;
+  display: flex;
+  display: inline;
   padding: 2rem 4rem;
   width: 100%;
 }

@@ -12,6 +12,7 @@ import Root, {
 } from "./routes/root";
 import Thing, { loader as thingLoader } from "./routes/thing";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
