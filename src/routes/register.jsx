@@ -12,7 +12,7 @@ export default function Register() {
   return (
     <>
       <div id="sidebar">
-        <div>Register</div>
+        <h1><div>Register</div></h1>
       </div>
       <div id="detail">
         <Form method="post" id="thing-form">

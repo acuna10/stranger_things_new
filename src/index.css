@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
 }
+
 *,
 *:before,
 *:after {
@@ -27,6 +28,7 @@ body {
   line-height: 1.5;
   color: #121212;
 }
+
 textarea,
 input,
 button {
@@ -40,6 +42,7 @@ button {
   line-height: 1.5;
   margin: 0;
 }
+
 button {
   color: #3992ff;
   font-weight: 500;
@@ -61,23 +64,37 @@ button:active {
   align-items: flex-start;
   gap: 1rem;
 }
+
 #thing h1 form {
   display: flex;
   align-items: center;
   margin-top: 0.25rem;
 }
+
 #thing h1 form button {
   box-shadow: none;
   font-size: 1.5rem;
   font-weight: 400;
   padding: 0;
 }
+
 #thing h1 form button[value="true"] {
   color: #a4a4a4;
 }
+
 #thing h1 form button[value="true"]:hover,
 #thing h1 form button[value="false"] {
   color: #eeb004;
+}
+
+#comment {
+  display: flex;
+  width: 100%;
+  padding: 5px;
+  border-color: #3992ff;
+  border-style: solid;
+  border-radius: 4px;
+  text-align: center;
 }
 
 form[action$="destroy"] button {
@@ -98,33 +115,34 @@ form[action$="destroy"] button {
 
 #root {
   display: flex;
-  max-height: max-content;
+  height: max-content;
   width: 100%;
-  background-color: lightgreen;
-  align-items: center;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
 }
 
 #sidebar {
   width: 22rem;
-  background-color: lightgoldenrodyellow;
-  border-right: solid 1px #e3e3e3;
+  background-color: #f7f7f7;
+  border-right: solid 2px #e3e3e3;
   display: flex;
   flex-direction: column;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
 }
 
-#sidebar > * {
+#sidebar>* {
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
 #sidebar h1 {
-  font-size: 1rem;
+  font-size: 60px;
   font-weight: 500;
   display: flex;
   align-items: center;
-  margin: 0;
-  padding: 1rem 2rem;
-  border-top: 1px solid #e3e3e3;
+  margin: 6px;
+  padding: 1rem 5rem;
   order: 1;
   line-height: 1;
 }
@@ -136,23 +154,20 @@ form[action$="destroy"] button {
   top: 1px;
 }
 
-#sidebar > div {
+#sidebar>div {
   display: flex;
   align-items: center;
-  text-align: center;
   gap: 0.5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #e3e3e3;
-  font-size: 30px;
-  
 }
 
-#sidebar > div form {
+#sidebar>div form {
   position: relative;
 }
 
-#sidebar > div form input[type="search"] {
+#sidebar>div form input[type="search"] {
   width: 100%;
   padding-left: 2rem;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='%23999' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z' /%3E%3C/svg%3E");
@@ -162,7 +177,7 @@ form[action$="destroy"] button {
   position: relative;
 }
 
-#sidebar > div form input[type="search"].loading {
+#sidebar>div form input[type="search"].loading {
   background-image: none;
 }
 
@@ -180,6 +195,7 @@ form[action$="destroy"] button {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -195,6 +211,7 @@ form[action$="destroy"] button {
   float: right;
   color: #eeb004;
 }
+
 #sidebar nav a.active span {
   color: inherit;
 }
@@ -202,14 +219,15 @@ form[action$="destroy"] button {
 i {
   color: #818181;
 }
+
 #sidebar nav .active i {
   color: inherit;
 }
 
 #sidebar ul {
-  background-color: lightcoral;
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 
 #sidebar li {
@@ -242,9 +260,9 @@ i {
 #sidebar nav a.pending {
   color: hsl(224, 98%, 58%);
 }
+
 #detail {
-  display: flex;
-  display: inline;
+  flex: 1;
   padding: 2rem 4rem;
   width: 100%;
 }
@@ -267,11 +285,11 @@ i {
   line-height: 1.2;
 }
 
-#thing h1 + p {
+#thing h1+p {
   margin: 0;
 }
 
-#thing h1 + p + p {
+#thing h1+p+p {
   white-space: break-spaces;
 }
 
@@ -286,6 +304,7 @@ i {
   color: #3992ff;
   text-decoration: none;
 }
+
 #thing a[href*="twitter"]:hover {
   text-decoration: underline;
 }
@@ -299,7 +318,7 @@ i {
   object-fit: cover;
 }
 
-#thing h1 ~ div {
+#thing h1~div {
   display: flex;
   gap: 0.5rem;
   margin: 1rem 0;
@@ -311,21 +330,26 @@ i {
   flex-direction: column;
   gap: 1rem;
 }
-#thing-form > p:first-child {
+
+#thing-form>p:first-child {
   margin: 0;
   padding: 0;
 }
-#thing-form > p:first-child > :nth-child(2) {
+
+#thing-form>p:first-child> :nth-child(2) {
   margin-right: 1rem;
 }
-#thing-form > p:first-child,
+
+#thing-form>p:first-child,
 #thing-form label {
   display: flex;
 }
+
 #thing-form p:first-child span,
 #thing-form label span {
   width: 8rem;
 }
+
 #thing-form p:first-child input,
 #thing-form label input,
 #thing-form label textarea {
@@ -385,9 +409,11 @@ i {
   justify-content: center;
   width: 100%;
 }
+
 .price {
   padding: 5px;
   border-color: #3992ff;
   border-style: solid;
   border-radius: 4px;
+  text-align: center;
 }

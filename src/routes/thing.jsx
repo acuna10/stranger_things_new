@@ -16,8 +16,12 @@ export default function Thing() {
         {thing.price && <p class="price">${thing.price}</p>}
 
         {thing.description && <p>{thing.description}</p>}
-
+        <h1>Comments</h1>
+        <input id="comment" type="text"></input>
         <div>
+          <Form action="post">
+            <button type="submit">Post Commment</button>
+          </Form>
           <Form action="edit">
             <button type="submit">Edit</button>
           </Form>
@@ -35,21 +39,5 @@ export default function Thing() {
         </div>
       </div>
     </div>
-  );
-}
-
-function Favorite({ thing }) {
-  // yes, this is a `let` for later
-  let favorite = thing.favorite;
-  return (
-    <Form method="post">
-      <button
-        name="favorite"
-        value={favorite ? "false" : "true"}
-        aria-label={favorite ? "Remove from favorites" : "Add to favorites"}
-      >
-        {favorite ? "★" : "☆"}
-      </button>
-    </Form>
   );
 }

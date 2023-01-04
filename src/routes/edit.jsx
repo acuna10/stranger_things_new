@@ -1,5 +1,6 @@
-import { Form, redirect, useLoaderData } from "react-router-dom";
+import { Form, Link, redirect, useLoaderData } from "react-router-dom";
 import { updateThing } from "../things";
+
 
 export async function action({ request, params }) {
   const formData = await request.formData();
@@ -38,7 +39,11 @@ export default function EditThing() {
       </label>
       <p>
         <button type="submit">Save</button>
-        <button type="button">Cancel</button>
+        <Link to="/">
+          <button type="button">
+            Cancel
+          </button>
+        </Link>
       </p>
     </Form>
   );

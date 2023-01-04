@@ -32,12 +32,12 @@ export default function Root() {
       <div id="sidebar">
         <div>
           {" "}
-            {isLoggedIn ? (
-              <button onClick={EditThing}>New Post</button>
-            ) : (
-              <Link to="things/:thingId/edit">Edit</Link>
-            )}
-        
+          {isLoggedIn ? (
+            <button onClick={EditThing}>New Post</button>
+          ) : (
+            <Link to="/things/:thingId/edit">Edit</Link>
+          )}
+
           {isLoggedIn ? (
             <button onClick={logOut}>Logout</button>
           ) : (
@@ -57,7 +57,6 @@ export default function Root() {
                 <li key={thing._id}>
                   <Link to={`things/${thing._id}`}>
                     {thing.title}
-                    {thing.favorite && <span>★</span>}
                   </Link>
                 </li>
               ))}
